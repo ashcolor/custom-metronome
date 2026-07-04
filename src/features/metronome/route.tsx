@@ -8,7 +8,6 @@ import VolumeControl from "@/components/VolumeControl";
 import BeatsDots from "./components/BeatsDots";
 import MetronomeVisualizer from "./components/MetronomeVisualizer";
 import TempoEditor from "./components/TempoEditor";
-import Pendulum from "./components/Pendulum";
 
 function isEditableTarget(target: EventTarget | null): boolean {
   if (!(target instanceof HTMLElement)) return false;
@@ -161,7 +160,6 @@ export function Metronome() {
               />
             )}
           </div>
-          {state.showPendulum && <Pendulum />}
           <BeatsDots
             isPlaying={state.isPlaying}
             currentBeat={state.currentBeat}

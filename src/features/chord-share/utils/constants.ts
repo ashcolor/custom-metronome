@@ -223,10 +223,7 @@ function buildCompactVoicing(root: string, type: string, bass?: string): string[
 // 鍵盤の表示音域を実際の音に合わせて算出する。
 // 最低音以下の C から最高音より上の C までを返す。
 // minOctaves で最小オクターブ数を保証し、それを超える音があれば可変で広げる。
-export function noteRange(
-  notes: string[],
-  minOctaves = 1,
-): { startNote: string; endNote: string } {
+export function noteRange(notes: string[], minOctaves = 1): { startNote: string; endNote: string } {
   const midis = notes.map((n) => Note.midi(n)).filter((m): m is number => m !== null);
   if (midis.length === 0) {
     return { startNote: "C4", endNote: Note.fromMidi(60 + minOctaves * 12) };
