@@ -16,9 +16,7 @@ export const renderWithAccidentals = (text: string) =>
     .map((char, index) =>
       char === "♯" || char === "♭" ? (
         // biome-ignore lint/suspicious/noArrayIndexKey: 表示専用の静的な文字列分割のため
-        <span key={index}>
-          {char}
-        </span>
+        <span key={index}>{char}</span>
       ) : (
         char
       ),
